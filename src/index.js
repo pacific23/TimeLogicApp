@@ -41,9 +41,25 @@ import infoValue4 from "./images/InfoValue4.png";
 import infoValue5 from "./images/InfoValue5.png";
 import infoValue6 from "./images/InfoValue6.png";
 
-var clocks = [clock0, clock1, clock2, clock3, clock4, clock5];
-var persos = [perso0, perso1, perso2, perso3, perso4, perso5];
+var clocks = [clock0, clock1, clock2, clock3, clock4, clock5, clockX];
+var persos = [perso0, perso1, perso2, perso3, perso4, perso5, persoX];
 var zones = [zone0, zone1, zone2, zone3, zone4, zone5];
+var img = [
+  replay,
+  infoZone0,
+  infoZone1,
+  infoZone2,
+  infoZone3,
+  infoZone4,
+  infoZone5,
+  infoValue0,
+  infoValue1,
+  infoValue2,
+  infoValue3,
+  infoValue4,
+  infoValue5,
+  infoValue6
+];
 
 class App extends React.Component {
   state = {
