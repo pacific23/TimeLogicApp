@@ -23,7 +23,6 @@ import zone2 from "./images/Zone2.png";
 import zone3 from "./images/Zone3.png";
 import zone4 from "./images/Zone4.png";
 import zone5 from "./images/Zone5.png";
-import infoEmpty from "./images/InfoEmpty.png";
 import infoPrivate from "./images/InfoPrivate.png";
 import infoPublic from "./images/InfoPublic.png";
 import replay from "./images/Replay.png";
@@ -71,7 +70,6 @@ class App extends React.Component {
     actualPlaquette: 0,
     actualZone: 0,
     showInfo: false,
-    showButtonNextPlayer: false,
     canReturn: true,
     informations: []
   };
@@ -150,7 +148,6 @@ class App extends React.Component {
     this.setState({
       showInfo: false,
       actualZone: zone,
-      showButtonNextPlayer: false,
       canReturn: true,
       actualPhase: 2
     });
@@ -158,15 +155,8 @@ class App extends React.Component {
 
   showInfo() {
     this.setState({
-      showButtonNextPlayer: true,
       canReturn: false,
       showInfo: true
-    });
-  }
-
-  hideInfo() {
-    this.setState({
-      showInfo: false
     });
   }
 
@@ -375,6 +365,10 @@ class App extends React.Component {
                 " - " +
                 (this.state.actualPlayer + 1)}
             </h1>
+          </td>
+        </tr>
+        <tr>
+          <td>
             {this.state.actualRow == 0 ? (
               <img
                 src={persos[this.state.actualPlaquette]}
@@ -397,8 +391,10 @@ class App extends React.Component {
                 onClick={() => this.cancelChoice()}
               />
             ) : null}
-            <br />
-            <br />
+          </td>
+        </tr>
+        <tr>
+          <td>
             {this.story.data.map((data, i) => (
               <button
                 class="smallButton"
@@ -426,86 +422,84 @@ class App extends React.Component {
                 " - " +
                 (this.state.actualPlayer + 1)}
             </h1>
-            <table class="main">
-              <tr height="120">
-                <td>
-                  {this.state.actualRow == 0 ? (
-                    <img
-                      src={persos[this.state.actualPlaquette]}
-                      width="100"
-                      height="100"
-                    />
-                  ) : null}
-                  {this.state.actualRow == 1 ? (
-                    <img
-                      src={clocks[this.state.actualPlaquette]}
-                      width="100"
-                      height="100"
-                    />
-                  ) : null}
-                  <img
-                    src={zones[this.state.actualZone]}
-                    width="100"
-                    height="100"
-                  />
-                  {this.state.canReturn ? (
-                    <input
-                      class="smallButton"
-                      type="button"
-                      value="X"
-                      onClick={() => this.cancelChoice()}
-                    />
-                  ) : null}
-                </td>
-              </tr>
-            </table>
-            <br />
-            <br />
-            <input
-              class="button"
-              type="button"
-              value="Pressez pour voir"
-              onClick={() => this.showInfo()}
-            />
-            <br />
-            <br />
-            <table class="main">
-              <tr height="120">
-                {this.state.showButtonNextPlayer ? (
-                  <td class="info">
-                    <img class="info" src={infoPublic} />
-                    {this.state.informations[1].map((information) => (
-                      <img
-                        class="info"
-                        src={require(`./images/${information}.png`)}
-                      />
-                    ))}
-                  </td>
-                ) : (
-                  <td class="info">
-                    <img class="info" src={infoEmpty} />
-                  </td>
-                )}
-                {this.state.showInfo ? (
-                  <td class="info">
-                    <img class="info" src={infoPrivate} />
-                    {this.state.informations[2].map((information) => (
-                      <img
-                        class="info"
-                        src={require(`./images/${information}.png`)}
-                      />
-                    ))}
-                  </td>
-                ) : (
-                  <td class="info">
-                    <img class="info" src={infoEmpty} />
-                  </td>
-                )}
-              </tr>
-            </table>
-            <br />
-            <br />
-            {this.state.showButtonNextPlayer ? (
+          </td>
+        </tr>
+        <tr height="120">
+          <td>
+            {this.state.actualRow == 0 ? (
+              <img
+                src={persos[this.state.actualPlaquette]}
+                width="100"
+                height="100"
+              />
+            ) : null}
+            {this.state.actualRow == 1 ? (
+              <img
+                src={clocks[this.state.actualPlaquette]}
+                width="100"
+                height="100"
+              />
+            ) : null}
+            <img src={zones[this.state.actualZone]} width="100" height="100" />
+            {this.state.canReturn ? (
+              <input
+                class="smallButton"
+                type="button"
+                value="X"
+                onClick={() => this.cancelChoice()}
+              />
+            ) : null}
+          </td>
+        </tr>
+        {!this.state.showInfo ? (
+          <tr height="120">
+            <td>
+              <input
+                class="button"
+                type="button"
+                value="Pressez pour voir"
+                onClick={() => this.showInfo()}
+              />
+            </td>
+          </tr>
+        ) : null}
+        <tr height="120">
+          {this.state.showInfo ? (
+            <td class="info">
+              <img class="info" src={infoPublic} />
+              {this.state.informations[1].map((information) => (
+                <img
+                  class="info"
+                  src={require(`./images/${information}.png`)}
+                />
+              ))}
+            </td>
+          ) : (
+            <td class="info">
+              <img class="info" src={infoPublic} />
+            </td>
+          )}
+        </tr>
+        <tr height="120">
+          {this.state.showInfo ? (
+            <td class="info">
+              <img class="info" src={infoPrivate} />
+              {this.state.informations[2].map((information) => (
+                <img
+                  class="info"
+                  src={require(`./images/${information}.png`)}
+                />
+              ))}
+            </td>
+          ) : (
+            <td class="info">
+              <img class="info" src={infoPrivate} />
+            </td>
+          )}
+        </tr>
+        <tr height="120">
+          <td>
+            {this.state.showInfo ? (
               this.state.informations[0] ? (
                 <input
                   class="button"
