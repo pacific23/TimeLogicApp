@@ -465,8 +465,7 @@ class App extends React.Component {
               class="button"
               type="button"
               value="Pressez pour voir"
-              onMouseDown={() => this.showInfo()}
-              onMouseUp={() => this.hideInfo()}
+              onClick={() => this.showInfo()}
             />
             <br />
             <br />
