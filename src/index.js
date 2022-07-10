@@ -39,6 +39,7 @@ import infoValue3 from "./images/InfoValue3.png";
 import infoValue4 from "./images/InfoValue4.png";
 import infoValue5 from "./images/InfoValue5.png";
 import infoValue6 from "./images/InfoValue6.png";
+import sol1 from "./images/Sol1.png";
 import sol100 from "./images/Sol100.png";
 import sol101 from "./images/Sol101.png";
 import sol102 from "./images/Sol102.png";
@@ -75,6 +76,7 @@ var imgs = [
   infoValue6
 ];
 var sols = [
+  sol1,
   sol100,
   sol101,
   sol102,

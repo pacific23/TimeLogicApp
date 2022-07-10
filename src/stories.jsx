@@ -3,6 +3,79 @@ class Stories {
 
   constructor() {
     this.stories.push({
+      title: "Tuto Meurtre au Manoir",
+      id: 1,
+      questions: ["Question 1", "Question 2", "Question 3", "Question 4"],
+      plaquettes: [
+        [true, true, true, true, true, true],
+        [false, true, true, true, true, true]
+      ],
+      startInfos: [
+        [0, 0, 0],
+        [1, 0, 3],
+        [2, 0, 0],
+        [3, 0, 1]
+      ],
+      data: [
+        [
+          [
+            [true, ["InfoZone0", "InfoValue1"], ["Clock0", "Replay"]],
+            [true, ["InfoZone0", "InfoValue0"], ["Replay"]],
+            [false, ["InfoZone0", "InfoValue2"], ["Clock2"]],
+            [true, ["InfoZone0", "InfoValue0"], ["Replay"]]
+          ],
+          [
+            [false, [], []],
+            [true, ["InfoZone0", "InfoValue0"], ["Replay"]],
+            [false, ["InfoZone0", "InfoValue1"], ["Perso2"]],
+            [true, ["InfoZone0", "InfoValue0"], ["Replay"]]
+          ]
+        ],
+        [
+          [
+            [false, ["InfoZone1", "InfoValue2"], ["Clock3"]],
+            [false, ["InfoZone1", "InfoValue1"], ["Clock2"]],
+            [false, ["InfoZone1", "InfoValue1"], ["Clock3"]],
+            [true, ["InfoZone1", "InfoValue1"], ["Clock0", "Replay"]]
+          ],
+          [
+            [false, [], []],
+            [false, ["InfoZone1", "InfoValue1"], ["Perso0"]],
+            [false, ["InfoZone1", "InfoValue1"], ["Perso1"]],
+            [false, ["InfoZone1", "InfoValue2"], ["Perso0"]]
+          ]
+        ],
+        [
+          [
+            [false, ["InfoZone2", "InfoValue1"], ["Clock2"]],
+            [false, ["InfoZone2", "InfoValue2"], ["Clock1"]],
+            [false, ["InfoZone2", "InfoValue1"], ["Clock1"]],
+            [false, ["InfoZone2", "InfoValue2"], ["Clock3"]]
+          ],
+          [
+            [false, [], []],
+            [false, ["InfoZone2", "InfoValue3"], ["Perso3"]],
+            [false, ["InfoZone2", "InfoValue1"], ["Perso0"]],
+            [false, ["InfoZone2", "InfoValue2"], ["Perso1"]]
+          ]
+        ],
+        [
+          [
+            [true, ["InfoZone3", "InfoValue0"], ["Replay"]],
+            [true, ["InfoZone3", "InfoValue1"], ["Clock0", "Replay"]],
+            [true, ["InfoZone3", "InfoValue0"], ["Replay"]],
+            [false, ["InfoZone3", "InfoValue1"], ["Clock2"]]
+          ],
+          [
+            [false, [], []],
+            [true, ["InfoZone3", "InfoValue0"], ["Replay"]],
+            [false, ["InfoZone3", "InfoValue1"], ["Perso3"]],
+            [true, ["InfoZone3", "InfoValue0"], ["Replay"]]
+          ]
+        ]
+      ]
+    });
+    this.stories.push({
       title: "Meurtre au Manoir",
       id: 100,
       questions: ["Question 1", "Question 2", "Question 3", "Question 4"],
