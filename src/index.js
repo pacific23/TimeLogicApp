@@ -78,6 +78,15 @@ class App extends React.Component {
   stories = new Stories();
   story;
 
+  componentDidMount() {
+    var imageLists = [clocks, persos, zones, img];
+    imageLists.forEach((imageList) => {
+      imageList.forEach((image) => {
+        new Image().src = image;
+      });
+    });
+  }
+
   launchGame(title) {
     this.story = this.stories.getRandomGame(title);
     this.setState({
