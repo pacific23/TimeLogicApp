@@ -474,11 +474,7 @@ class App extends React.Component {
                 />
               ))}
             </td>
-          ) : (
-            <td class="info">
-              <img class="info" src={infoPublic} />
-            </td>
-          )}
+          ) : null}
         </tr>
         <tr height="120">
           {this.state.showInfo ? (
@@ -491,33 +487,33 @@ class App extends React.Component {
                 />
               ))}
             </td>
-          ) : (
-            <td class="info">
-              <img class="info" src={infoPrivate} />
-            </td>
-          )}
+          ) : null}
         </tr>
-        <tr height="120">
-          <td>
-            {this.state.showInfo ? (
-              this.state.informations[0] ? (
+        {this.state.showInfo ? (
+          this.state.informations[0] ? (
+            <tr height="120">
+              <td>
                 <input
                   class="button"
                   type="button"
                   value="Rejouer"
                   onClick={() => this.samePlayer()}
                 />
-              ) : (
+              </td>
+            </tr>
+          ) : (
+            <tr height="120">
+              <td>
                 <input
                   class="button"
                   type="button"
                   value="Joueur suivant"
                   onClick={() => this.nextPlayer()}
                 />
-              )
-            ) : null}
-          </td>
-        </tr>
+              </td>
+            </tr>
+          )
+        ) : null}
       </table>
     );
   }
