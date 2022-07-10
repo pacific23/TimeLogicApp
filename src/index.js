@@ -385,7 +385,7 @@ class App extends React.Component {
             <input
               class="smallButton"
               type="button"
-              value="Skip player"
+              value="Sauter ce joueur"
               onClick={() => this.nextPlayer()}
             />
             &nbsp;&nbsp;
@@ -505,7 +505,7 @@ class App extends React.Component {
               <input
                 class="button"
                 type="button"
-                value="Pressez pour voir"
+                value="Afficher les informations"
                 onClick={() => this.showInfo()}
               />
             </td>
