@@ -39,11 +39,26 @@ import infoValue3 from "./images/InfoValue3.png";
 import infoValue4 from "./images/InfoValue4.png";
 import infoValue5 from "./images/InfoValue5.png";
 import infoValue6 from "./images/InfoValue6.png";
+import sol100 from "./images/Sol100.png";
+import sol101 from "./images/Sol101.png";
+import sol102 from "./images/Sol102.png";
+import sol103 from "./images/Sol103.png";
+import sol104 from "./images/Sol104.png";
+import sol200 from "./images/Sol200.png";
+import sol201 from "./images/Sol201.png";
+import sol202 from "./images/Sol202.png";
+import sol203 from "./images/Sol203.png";
+import sol204 from "./images/Sol204.png";
+import sol300 from "./images/Sol300.png";
+import sol301 from "./images/Sol301.png";
+import sol302 from "./images/Sol302.png";
+import sol303 from "./images/Sol303.png";
+import sol304 from "./images/Sol304.png";
 
 var clocks = [clock0, clock1, clock2, clock3, clock4, clock5, clockX];
 var persos = [perso0, perso1, perso2, perso3, perso4, perso5, persoX];
 var zones = [zone0, zone1, zone2, zone3, zone4, zone5];
-var img = [
+var imgs = [
   replay,
   infoZone0,
   infoZone1,
@@ -58,6 +73,23 @@ var img = [
   infoValue4,
   infoValue5,
   infoValue6
+];
+var sols = [
+  sol100,
+  sol101,
+  sol102,
+  sol103,
+  sol104,
+  sol200,
+  sol201,
+  sol202,
+  sol203,
+  sol204,
+  sol300,
+  sol301,
+  sol302,
+  sol303,
+  sol304
 ];
 
 class App extends React.Component {
@@ -77,7 +109,7 @@ class App extends React.Component {
   story;
 
   componentDidMount() {
-    var imageLists = [clocks, persos, zones, img];
+    var imageLists = [clocks, persos, zones, imgs, sols];
     imageLists.forEach((imageList) => {
       imageList.forEach((image) => {
         new Image().src = image;
@@ -173,6 +205,12 @@ class App extends React.Component {
     });
   }
 
+  showSolution() {
+    this.setState({
+      actualPage: 4
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -180,6 +218,7 @@ class App extends React.Component {
         {this.state.actualPage == 1 ? this.renderPreGame() : null}
         {this.state.actualPage == 2 ? this.renderStartingInfo() : null}
         {this.state.actualPage == 3 ? this.renderGame() : null}
+        {this.state.actualPage == 4 ? this.renderSolution() : null}
       </div>
     );
   }
@@ -346,6 +385,13 @@ class App extends React.Component {
               type="button"
               value="Skip player"
               onClick={() => this.nextPlayer()}
+            />
+            &nbsp;&nbsp;
+            <input
+              class="smallButton"
+              type="button"
+              value="Voir solution"
+              onClick={() => this.showSolution()}
             />
           </td>
         </tr>
@@ -514,6 +560,33 @@ class App extends React.Component {
             </tr>
           )
         ) : null}
+      </table>
+    );
+  }
+
+  renderSolution() {
+    return (
+      <table class="main">
+        <tr>
+          <td>
+            <h1>{this.story.title}</h1>
+            <h3>{"ID" + this.story.id}</h3>
+            <h1>
+              {this.state.players[this.state.actualPlayer].name +
+                " - " +
+                (this.state.actualPlayer + 1)}
+            </h1>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src={require(`./images/Sol${this.story.id}.png`)}
+              width="500"
+              height="500"
+            />
+          </td>
+        </tr>
       </table>
     );
   }
