@@ -33,7 +33,7 @@ img.info {
 
 .text {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 20px;
   caret-color: #000;
   padding: 10px 10px;
   -webkit-border-radius: 5px;
@@ -48,7 +48,7 @@ img.info {
   font-weight: bold;
   background-color: #538fbe;
   padding: 20px 30px;
-  font-size: 24px;
+  font-size: 20px;
   border: 1px solid #2d6898;
   background-image: linear-gradient(
     bottom,
@@ -153,7 +153,7 @@ img.info {
   font-weight: bold;
   background-color: #538fbe;
   padding: 5px 10px;
-  font-size: 25px;
+  font-size: 20px;
   border: 1px solid #2d6898;
   background-image: linear-gradient(
     bottom,
